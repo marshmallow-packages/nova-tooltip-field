@@ -1,0 +1,39 @@
+{
+    "name": "marshmallow/nova-tooltip-field",
+    "description": "This Laravel Nova field enables you to make use of the default Nova Tooltip component.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "tooltip",
+        "marshmallow"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "require-dev": {
+        "laravel/nova": "^5.0",
+        "laravel/nova-devtool": "^1.5"
+    },
+    "repositories": [
+        { "type": "composer", "url": "https://nova.laravel.com" }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Marshmallow\\NovaTooltipField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Marshmallow\\NovaTooltipField\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
