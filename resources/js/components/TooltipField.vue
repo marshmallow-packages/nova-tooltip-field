@@ -13,8 +13,18 @@
         :boundary="boundary"
     >
         <div class="inline-flex items-center gap-2 cursor-pointer">
-            <Icon v-if="tooltipIcon" :type="tooltipIconType" :name="tooltipIcon" class="inline-block" />
-            <div v-if="title" v-html="title"></div>
+            <Icon v-if="tooltipIcon"
+                :type="tooltipIconType"
+                :name="tooltipIcon"
+                class="inline-block"
+                :class="!tooltipTriggerIconStylingAsInlineStyle ? tooltipTriggerIconStyling : null"
+                :style="tooltipTriggerIconStylingAsInlineStyle ? tooltipTriggerIconStyling : null"/>
+
+            <div v-if="title"
+                v-html="title"
+                :class="!tooltipTriggerTextStylingAsInlineStyle ? tooltipTriggerTextStyling : null"
+                :style="tooltipTriggerTextStylingAsInlineStyle ? tooltipTriggerTextStyling : null"
+                ></div>
         </div>
         <template #content>
             <TooltipContent :max-width="width">
@@ -48,6 +58,10 @@ export default {
             title: this.field.tooltip || null,
             tooltipIcon: this.field.tooltipIcon || null,
             tooltipIconType: this.field.tooltipIconType || 'solid',
+            tooltipTriggerTextStyling: this.field.tooltipTriggerTextStyling || 'text-gray-500 dark:text-gray-400',
+            tooltipTriggerTextStylingAsInlineStyle: this.field.tooltipTriggerTextStylingAsInlineStyle || false,
+            tooltipTriggerIconStyling: this.field.tooltipTriggerIconStyling || 'text-gray-500 dark:text-gray-400',
+            tooltipTriggerIconStylingAsInlineStyle: this.field.tooltipTriggerIconStylingAsInlineStyle || false,
         }
     },
 
