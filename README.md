@@ -47,11 +47,21 @@ All the options that are available on the Nova Tooltip component can be set via 
 | `triggers(['hover'])` | Sets the events that trigger the tooltip. E.g. `click`, `hover`, `focus` or `touch` |
 | `autoHide(true)`      | Determines whether the tooltip should automatically hide after showing.     |
 | `tooltip('Hover me!')`| Sets the text content of the tooltip.                                       |
-| `tooltipIcon('information-circle')` | Specifies the icon to be displayed in the tooltip.            |
+| `tooltipIcon('information-circle')` | Specifies the icon to be displayed in the tooltip. This can be a string or a callble. |
 | `tooltipIconType('outline')` | Defines the style of the tooltip icon. E.g. `solid`, `outline`, `mini` or `micro` |
 | `preventOverflow(false)` | Prevents the tooltip from overflowing its boundary.                      |
 | `theme('plain')`      | Sets the theme of the tooltip. E.g. `nova`, `tooltip`, `dropdown`, `menu` or `plain` |
 | `maxWith(400)`        | Defines the maximum width of the tooltip.                                   |
+
+### Options with a little bit more context
+#### tooltipIcon
+The tooltipIcon method will accept a string, being an icon name, or it will accept a callable where you can "calculate" the icon you want to use. E.g.
+
+```php
+->tooltipIcon(function () {
+    return $this->field_01 > 0 ? 'arrow-up' : 'arrow-down';
+})
+```
 
 ## Licence
 

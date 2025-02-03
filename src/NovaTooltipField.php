@@ -83,8 +83,9 @@ class NovaTooltipField extends Field
         ]);
     }
 
-    public function tooltipIcon(string $tooltipIcon): self
+    public function tooltipIcon(string|callable $tooltipIcon): self
     {
+        $tooltipIcon = is_callable($tooltipIcon) ? $tooltipIcon() : $tooltipIcon;
         return $this->withMeta([
             'tooltipIcon' => $tooltipIcon
         ]);
