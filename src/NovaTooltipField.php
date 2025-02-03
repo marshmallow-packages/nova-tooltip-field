@@ -97,4 +97,28 @@ class NovaTooltipField extends Field
             'tooltipIconType' => $tooltipIconType
         ]);
     }
+
+    public function tooltipTriggerStyling(string|callable $tooltipTriggerStyling = null, bool $asInlineStyle = false): self
+    {
+        return $this->tooltipTriggerTextStyling($tooltipTriggerStyling, $asInlineStyle)
+            ->tooltipTriggerIconStyling($tooltipTriggerStyling, $asInlineStyle);
+    }
+
+    public function tooltipTriggerTextStyling(string|callable $tooltipTriggerTextStyling = null, bool $asInlineStyle = false): self
+    {
+        $tooltipTriggerTextStyling = is_callable($tooltipTriggerTextStyling) ? $tooltipTriggerTextStyling() : $tooltipTriggerTextStyling;
+        return $this->withMeta([
+            'tooltipTriggerTextStyling' => $tooltipTriggerTextStyling,
+            'tooltipTriggerTextStylingAsInlineStyle' => $asInlineStyle,
+        ]);
+    }
+
+    public function tooltipTriggerIconStyling(string|callable $tooltipTriggerIconStyling = null, bool $asInlineStyle = false): self
+    {
+        $tooltipTriggerIconStyling = is_callable($tooltipTriggerIconStyling) ? $tooltipTriggerIconStyling() : $tooltipTriggerIconStyling;
+        return $this->withMeta([
+            'tooltipTriggerIconStyling' => $tooltipTriggerIconStyling,
+            'tooltipTriggerIconStylingAsInlineStyle' => $asInlineStyle,
+        ]);
+    }
 }
