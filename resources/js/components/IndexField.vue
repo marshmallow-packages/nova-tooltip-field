@@ -12,7 +12,7 @@
         :auto-hide="autoHide"
         :boundary="boundary"
     >
-        <div class="inline-flex items-center gap-2">
+        <div class="inline-flex items-center gap-2 cursor-pointer">
             <Icon v-if="tooltipIcon" :type="tooltipIconType" :name="tooltipIcon" class="inline-block" />
             <div v-if="title" v-html="title"></div>
         </div>
