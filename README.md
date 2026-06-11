@@ -1,8 +1,9 @@
-[![Version](https://img.shields.io/packagist/v/marshmallow/nova-tooltip-field)](https://github.com/marshmallow-packages/nova-tooltip-field)
-[![Issues](https://img.shields.io/github/issues/marshmallow-packages/nova-tooltip-field)](https://github.com/marshmallow-packages/nova-tooltip-field)
-[![Licence](https://img.shields.io/github/license/marshmallow-packages/nova-tooltip-field)](https://github.com/marshmallow-packages/nova-tooltip-field)
+[![Version](https://img.shields.io/packagist/v/marshmallow/nova-tooltip-field)](https://packagist.org/packages/marshmallow/nova-tooltip-field)
+[![Downloads](https://img.shields.io/packagist/dt/marshmallow/nova-tooltip-field)](https://packagist.org/packages/marshmallow/nova-tooltip-field)
+[![Issues](https://img.shields.io/github/issues/marshmallow-packages/nova-tooltip-field)](https://github.com/marshmallow-packages/nova-tooltip-field/issues)
+[![Licence](https://img.shields.io/github/license/marshmallow-packages/nova-tooltip-field)](https://github.com/marshmallow-packages/nova-tooltip-field/blob/main/LICENCE)
 
-# Laravel Nova Totals footer
+# Laravel Nova Tooltip Field
 This [Laravel Nova](https://nova.laravel.com) field enables you to make use of the default Nova Tooltip component.
 
 ## Screenshot
@@ -22,9 +23,11 @@ composer require marshmallow/nova-tooltip-field
 ```
 
 ## Usage
-The usage is extreamly simple. You just call the field as you whould any other Nova Field. The example below is the same as we have used to create the screenshot on top of this page.
+The usage is extremely simple. You just call the field as you would any other Nova field. The example below is the same as we have used to create the screenshot on top of this page.
 
 ```php
+use Marshmallow\NovaTooltipField\NovaTooltipField;
+
 NovaTooltipField::make('Tooltip Demo')
     ->resolveUsing(function ($value) {
         return '<strong>Demo</strong><br/>How awesome is this?';
